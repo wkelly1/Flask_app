@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for("index") }}" style="font-family: 'Oleo Script', Helvetica, sans-serif;">WebSiteName<span style="color:orange;">.</span></a>
+        </div>
+
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active"><a href="{{ url_for("dashboard") }}">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    {% if not session.logged_in %}
+                        <li><a href="{{ url_for("login") }}">Login</a></li>
+                    {% endif %}
+                    {% if not session.logged_in %}
+                        <li><a href="{{ url_for("register") }}">Register</a></li>
+                    {% endif %}
+                    {% if session.logged_in %}
+                        <li><a href="{{ url_for("settings") }}">Settings</a></li>
+                    {% endif %}
+                </ul>
+
+            </li>
+            {% if session.logged_in %}
+                <li class="nav-item"><a href="{{ url_for("signout") }}">Sign out</a></li>
+            {% endif %}
+        </ul>
+
+
+    </div>
+</nav>
+
+<div class="container-fluid" style="height:50px; width:80%;">
+    <div class="wrapper">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible" role="alert" style="position: relative; z-index: 99 !important;">
+                        {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+
+
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% block body %}
+
+
+{% endblock %}
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+
+
+</html>

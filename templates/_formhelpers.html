@@ -1,0 +1,62 @@
+{% macro render_field(field) %}
+    {% if field.id == "username" %}
+    <dt>{{ field.label }}</dt>
+    <div class="input-group">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <dd>{{ field(**kwargs)|safe }}
+            {% if field.errors %}
+                <ul class=errors>
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </dd>
+    </div>
+    {% elif field.id == "password" or field.id == "confirm" %}
+        <dt>{{ field.label }}</dt>
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-lock"></span>
+            </div>
+            <dd>{{ field(**kwargs)|safe }}
+                {% if field.errors %}
+                    <ul class=errors>
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </dd>
+        </div>
+    {% elif field.id == "email" %}
+        <dt>{{ field.label }}</dt>
+        <div class="input-group">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+            <dd>{{ field(**kwargs)|safe }}
+                {% if field.errors %}
+                    <ul class=errors>
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </dd>
+        </div>
+    {% else %}
+        <dt>{{ field.label }}</dt>
+        <dd>{{ field(**kwargs)|safe }}
+            {% if field.errors %}
+                <ul class=errors>
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </dd>
+    {% endif %}
+{% endmacro %}

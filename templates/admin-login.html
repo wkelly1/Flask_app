@@ -1,0 +1,33 @@
+{% extends "headers.html" %}
+
+{% block body %}
+    <div class="container">
+        <div class="wrapper">
+            <h1 style="text-align: center;">--Admin login--</h1>
+            <form class="form-signin niceOrange" method=post>
+                <h2 class="form-signin-heading">Please login</h2>
+                <label>Email</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-envelope"></span>
+                    </div>
+                <input type="text" class="form-control" name="username" placeholder="Email Address, username" required=""
+                       autofocus=""/>
+                </div>
+                <label style="margin-top: 10px;">Password</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-lock"></span>
+                    </div>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+                </div>
+                <label>
+                    <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+                </label>
+                <button class="btn btn-lg btn-primary btn-block" value=Login type="submit">Login</button>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

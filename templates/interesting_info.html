@@ -1,0 +1,16 @@
+{% extends "headers.html" %}
+
+{% block body %}
+    <div class="container"><h1>Settings</h1></div>
+    <div class="container"
+         style="background-color: white; border-radius: 5px;">
+        <ul class="nav nav-tabs">
+            <li><a href="{{ url_for("general") }}">General</a></li>
+            <li><a href="{{ url_for("security") }}">Security and Login</a></li>
+            <li><a href="{{ url_for("email_notifications") }}">Email and notification</a></li>
+            <li class="active"><a href="">Interesting info</a></li>
+        </ul>
+        <embed type="image/svg+xml" src={{graph_data|safe}} style='max-width:1000px'/>
+    </div>
+
+{% endblock %}

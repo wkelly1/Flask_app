@@ -1,0 +1,31 @@
+{% extends "headers.html" %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2">
+                <h2>Personal info</h2>
+                <address>
+                    <strong>Your address</strong><br>
+                    1355 Market Street, Suite 900<br>
+                    San Francisco, CA 94103<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+                <address>
+                    <strong>Full Name</strong><br>
+                    <a href="mailto:#">first.last@example.com</a>
+                </address>
+                <p>Hello {{ session['user'] }}</p>
+            </div>
+            <div class="col-md-5">
+                <h2>Your team</h2>
+            </div>
+            <div class="col-md-5">
+                <h2>Upload</h2>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "headers.html" %}
+
+{% block body %}
+    <div class="container"><h1>Support</h1></div>
+    <div class="container"
+         style="background-color: white; border-radius: 5px; border-style: solid; border-color: #898989; border-width: 1px;">
+        <form method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="text" class="form-control" id="name" placeholder="name">
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Send</button>
+        </form>
+
+    </div>
+
+{% endblock %}

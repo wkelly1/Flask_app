@@ -1,0 +1,15 @@
+{% extends "headers.html" %}
+
+{% block body %}
+    <div class="container"><h1>Settings</h1></div>
+    <div class="container"
+         style="background-color: white; border-radius: 5px; border-style: solid; border-color: #898989; border-width: 1px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{{ url_for("general") }}">General</a></li>
+            <li><a href="{{ url_for("security") }}">Security and Login</a></li>
+            <li><a href="{{ url_for("email_notification") }}">Email and notification</a></li>
+
+        </ul>
+    </div>
+
+{% endblock %}

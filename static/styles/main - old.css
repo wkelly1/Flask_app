@@ -1,0 +1,80 @@
+html, body{
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin: 0;
+    /*background-color: aquamarine;*/
+    background-image: url('/static/img/background.png');
+}
+
+a:link{
+    text-decoration:  none;
+}
+
+.container{
+    margin: 0;
+    height: 100%;
+    padding: 5px 10px;
+}
+
+.register-container{
+    padding: 2% 5%;
+    background-color: darkgrey;
+    width: 10%;
+    margin: 2% auto;
+    box-shadow: 0 20px 40px grey;
+}
+
+
+
+.register-container form dl{
+    margin: 0;
+    padding: 0;
+
+}
+
+.register-container h3{
+    margin: 2% 21% 0 36%;
+    color: white;
+}
+
+
+
+header{
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    background-color: #6D9BBF;
+    overflow: hidden;
+}
+
+header h1{
+    margin: 7px 10px;
+    color: #ffffff;
+}
+
+.inputFields{
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.submitFields{
+    background-color: #6D9BBF;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.submitFields:hover{
+    -ms-transform: scale(1.05,1.05);
+    -webkit-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);
+}
+
+dd{
+    margin: 0;
+}
+form label{
+    color: white;
+
+}
